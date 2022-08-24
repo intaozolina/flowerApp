@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1 class="heading">BUILD YOUR DREAM BOUQUET</h1>
+
+    <canvas id="canvas" style="position: relative; margin: 30px 650px;"></canvas>
+
+<div id="purpleModal" class="modal">
+    <div class="modal-content">
+        <div class="modal__header">
+            <h3 class="modal__heading">Choose the flower</h3>
+            <span id="purpleClose" class="close">&times;</span>
+        </div>
+        <form class="modal__form">
+            <label>
+            <input type="radio" name="flower"/>
+                Iris
+            </label>
+            <label>
+                <input type="radio" name="flower"/>
+                Lavender
+            </label>
+            <label>
+                <input type="radio" name="flower"/>
+                Verbena
+            </label>
+        </form>
+        <div class="modal__btns">
+            <btn id="purpleBtnClose" class="btnClose">Close</btn>
+            <btn id="purpleBtnSave" class = "btnSave">Save</btn>
+        </div>
+    </div>
+</div>
+
+<div id="blueModal" class="modal">
+    <div class="modal-content">
+        <div class="modal__header">
+            <h3 class="modal__heading">Choose the flower</h3>
+            <span id="blueClose" class="close">&times;</span>
+        </div>
+        <form class="modal__form">
+            <label>
+                <input type="radio" name="flower"/>
+                Hyacinth
+            </label>
+            <label>
+                <input type="radio" name="flower"/>
+                Cornflower
+            </label>
+            <label>
+                <input type="radio" name="flower"/>
+                Hydrangea
+            </label>
+        </form>
+        <div class="modal__btns">
+            <btn id="blueBtnClose" class="btnClose">Close</btn>
+            <btn id="blueBtnSave" class = "btnSave">Save</btn>
+        </div>
+    </div>
+</div>
+
+<div id="redModal" class="modal">
+    <div class="modal-content">
+        <div class="modal__header">
+            <h3 class="modal__heading">Choose the flower</h3>
+            <span id="redClose" class="close">&times;</span>
+        </div>
+        <form class="modal__form">
+            <label>
+                <input type="radio" name="flower"/>
+                Rose
+            </label>
+            <label>
+                <input type="radio" name="flower"/>
+                Dahlia
+            </label>
+            <label>
+                <input type="radio" name="flower"/>
+                Amaryllis
+            </label>
+        </form>
+        <div class="modal__btns">
+            <btn id="redBtnClose" class="btnClose">Close</btn>
+            <btn id="redBtnSave" class = "btnSave">Save</btn>
+        </div>
+    </div>
+</div>
+
+<script src="lib/fabric.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
