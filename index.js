@@ -69,18 +69,18 @@ openModal(purpleArray, purpleModal);
 openModal(blueArray, blueModal);
 openModal(salmonArray, redModal);
 
-const closingModal = (element, modal) => {
-    element.onclick = () => {
-        modal.style.display = 'none'
+const closingModal = (elementArray, modal) => {
+    elementArray.map((element) => {
+        element.onclick = () => {
+            modal.style.display = 'none'
     }
+    })
 };
 
-closingModal(purpleSpan, purpleModal);
-closingModal(purpleBtnCloseEl, purpleModal);
-closingModal(blueSpan, blueModal);
-closingModal(blueBtnCloseEl, blueModal);
-closingModal(redSpan, redModal);
-closingModal(redBtnCloseEl, redModal);
+closingModal([purpleSpan, purpleBtnCloseEl], purpleModal);
+closingModal([blueSpan, blueBtnCloseEl], blueModal);
+closingModal([redSpan, redBtnCloseEl], redModal);
+
 
 window.onclick = (event) => {
     if (event.target === purpleModal) {
