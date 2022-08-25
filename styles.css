@@ -92,3 +92,29 @@
      color: #fefefe;
  }
 
+@media screen and (max-width: 360px) {
+    .modal__image {
+        width: 10%;
+        height: 10%;
+    }
+    .modal-content {
+        margin: 80% auto;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .modal__image {
+        width: 7%;
+        height: 7%;
+    }
+    .modal-content {
+        margin: 30% auto;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .modal__image {
+        width: 5%;
+        height: 5%;
+    }
+}
