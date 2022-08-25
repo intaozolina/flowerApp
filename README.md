@@ -1,2 +1,2 @@
 # flowerApp
-Project created with Fabric.s
+Project created with Fabric.js
