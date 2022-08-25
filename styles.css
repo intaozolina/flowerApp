@@ -58,6 +58,20 @@
     cursor: pointer;
 }
 
+.modal__label {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.modal__image {
+    display: flex;
+    width: 2%;
+    height: 2%;
+}
+
 .modal__btns {
     display: flex;
     flex-direction: row;

@@ -56,6 +56,111 @@ const purpleSpan = document.getElementById("purpleClose");
 const blueSpan = document.getElementById("blueClose");
 const redSpan = document.getElementById("redClose");
 
+const purpleBtnSave = document.getElementById('purpleBtnSave');
+const blueBtnSave = document.getElementById('blueBtnSave');
+const redBtnSave = document.getElementById('redBtnSave');
+
+const inputEl = document.getElementsByName('flower');
+
+const addPurpleFlower = (imgSrc) => {
+    new fabric.Image.fromURL(imgSrc, function(img) {
+        img.scale(0.15).set('flipX', true).set("angle", -35).set("hasControls", false).set("top", 170).set("left", 150).set("selectable", false); canvas.add(img);});
+    new fabric.Image.fromURL(imgSrc, function(img1) {
+        img1.scale(0.15).set('flipX', true).set("angle", 0).set("hasControls", false).set("top", 120).set("left", 220).set("selectable", false); canvas.add(img1);});
+    new fabric.Image.fromURL(imgSrc, function(img2) {
+        img2.scale(0.15).set('flipX', true).set("angle",15).set("hasControls", false).set("top", 130).set("left", 290).set("selectable", false); canvas.add(img2);});
+    new fabric.Image.fromURL(imgSrc, function(img3) {
+        img3.scale(0.15).set('flipX', true).set("angle", -20).set("hasControls", false).set("top",200).set("left", 180).set("selectable", false); canvas.add(img3);});
+    new fabric.Image.fromURL(imgSrc, function(img4) {
+        img4.scale(0.15).set('flipX', true).set("angle", 5).set("hasControls", false).set("top", 180).set("left", 265).set("selectable", false); canvas.add(img4);});
+};
+
+const addBlueFlower = (imgSrc) => {
+    new fabric.Image.fromURL(imgSrc, function (img) {
+        img.scale(0.2).set('flipX', true).set("angle", -45).set("hasControls", false).set("top", 180).set("left", 50).set("selectable", false); canvas.add(img);});
+    new fabric.Image.fromURL(imgSrc, function (img1) {
+        img1.scale(0.2).set('flipX', true).set("angle", -15).set("hasControls", false).set("top", 80).set("left", 130).set("selectable", false); canvas.add(img1);});
+    new fabric.Image.fromURL(imgSrc, function (img2) {
+        img2.scale(0.2).set('flipX', true).set("angle", 15).set("hasControls", false).set("top", 40).set("left", 250).set("selectable", false); canvas.add(img2);});
+    new fabric.Image.fromURL(imgSrc, function (img3) {
+        img3.scale(0.2).set('flipX', true).set("angle", 45).set("hasControls", false).set("top", 60).set("left", 380).set("selectable", false); canvas.add(img3);});
+};
+
+const addSalmonFlowers = (imageSrc) => {
+    new fabric.Image.fromURL(imageSrc, function (img) {
+        img.scale(0.25).set('flipX', true).set("angle", -35).set("hasControls", false).set("top", 270).set("left", 80).set("selectable", false); canvas.add(img);});
+    new fabric.Image.fromURL(imageSrc, function (img3) {
+        img3.scale(0.25).set('flipX', true).set("angle", 35).set("hasControls", false).set("top", 180).set("left", 370).set("selectable", false); canvas.add(img3);});
+    new fabric.Image.fromURL(imageSrc, function (img2) {
+        img2.scale(0.25).set('flipX', true).set("angle", 15).set("hasControls", false).set("top", 240).set("left", 270).set("selectable", false); canvas.add(img2);});
+    new fabric.Image.fromURL(imageSrc, function (img1) {
+        img1.scale(0.25).set('flipX', true).set("angle", -15).set("hasControls", false).set("top", 270).set("left", 150).set("selectable", false); canvas.add(img1);});
+}
+
+
+
+const iris = "images/iris-back.png";
+const allium = "images/allium.png";
+const lilac = "images/lilac-back.png";
+const hydrangea = 'images/hydrogea-front.png';
+const lotus = 'images/lotus.png';
+const cornflower = 'images/cornflower.png';
+const rose = 'images/pink-rose-back.png';
+const gerbera = 'images/gerbera-front.png';
+const peony = 'images/peach-peony.png';
+
+let selectedFlower = '';
+
+inputEl.forEach((item) => {
+    item.onchange = () => {
+        selectedFlower = item.value;
+    };
+});
+
+purpleBtnSave.onclick = () => {
+    purpleArray.forEach((element) => {
+        element.set("visible", false)
+    });
+        if( selectedFlower === "iris") {
+            addPurpleFlower(iris);
+        } else if (selectedFlower === 'allium') {
+            addPurpleFlower(allium);
+        } else if (selectedFlower === 'lilac') {
+            addPurpleFlower(lilac);
+        }
+        purpleModal.style.display = 'none';
+        canvas.renderAll();
+}
+
+blueBtnSave.onclick = () => {
+    blueArray.forEach((element) => {
+        element.set("visible", false)
+    });
+    if( selectedFlower === "lotus") {
+        addBlueFlower(lotus);
+    } else if (selectedFlower === 'cornflower') {
+        addBlueFlower(cornflower);
+    } else if (selectedFlower === 'hydrangea') {
+        addBlueFlower(hydrangea);
+    }
+    blueModal.style.display = 'none';
+    canvas.renderAll();
+}
+
+redBtnSave.onclick = () => {
+    salmonArray.forEach((element) => {
+        element.set("visible", false)
+    });
+    if( selectedFlower === "rose") {
+        addSalmonFlowers(rose);
+    } else if (selectedFlower === 'peony') {
+        addSalmonFlowers(peony);
+    } else if (selectedFlower === 'gerbera') {
+        addSalmonFlowers(gerbera);
+    }
+    redModal.style.display = 'none';
+    canvas.renderAll();
+}
 
 const openModal = (array, modal) => {
     array.forEach((item)=> {
@@ -90,6 +195,19 @@ window.onclick = (event) => {
     } else if (event.target === redModal) {
         redModal.style.display = 'none;'
     }
-}
+};
 
-// cloneAsImage(callback, optionsopt) → {fabric.Object}
+// windon.onResize = () => {
+// inside function what gets dimensions of canvas wrapper div and assigne canvas size to it ion proportiopn.
+
+// window.onresize = () => {
+//     const outerCanvasContainer = document.getElementById('fabric-canvas-wrapper');
+//
+//     const ratio          = canvas.getWidth() / canvas.getHeight();
+//     const containerWidth = outerCanvasContainer.clientWidth;
+//     const scale          = containerWidth / canvas.getWidth();
+//     const zoom           = canvas.getZoom() * scale;
+//
+//     canvas.setDimensions({width: containerWidth, height: containerWidth / ratio});
+//     canvas.setViewportTransform([zoom, 0, 0, zoom, 0, 0]);
+// }

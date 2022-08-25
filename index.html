@@ -12,7 +12,9 @@
 
 <h1 class="heading">BUILD YOUR DREAM BOUQUET</h1>
 
+<div class="fabric-canvas-wrapper">
     <canvas id="canvas" style="position: relative; margin: 30px 650px;"></canvas>
+</div>
 
 <div id="purpleModal" class="modal">
     <div class="modal-content">
@@ -21,17 +23,21 @@
             <span id="purpleClose" class="close">&times;</span>
         </div>
         <form class="modal__form">
-            <label>
-            <input type="radio" name="flower"/>
+            <label class="modal__label">
+            <input type="radio" name="flower" value="iris"/>
                 Iris
+                <img id=iris" class="modal__image" src="images/iris-back.png" alt="Iris" />
             </label>
-            <label>
-                <input type="radio" name="flower"/>
-                Lavender
+
+            <label class="modal__label">
+                <input type="radio" name="flower" value="allium"/>
+                Allium
+                <img id="tulip" class="modal__image" src="images/allium.png" alt="Tulip" />
             </label>
-            <label>
-                <input type="radio" name="flower"/>
-                Verbena
+            <label class="modal__label">
+                <input type="radio" name="flower" value="lilac"/>
+                Lilac
+                <img id="lilac" class="modal__image" src="images/lilac-back.png" alt="Lilac" />
             </label>
         </form>
         <div class="modal__btns">
@@ -48,17 +54,20 @@
             <span id="blueClose" class="close">&times;</span>
         </div>
         <form class="modal__form">
-            <label>
-                <input type="radio" name="flower"/>
-                Hyacinth
+            <label class="modal__label">
+                <input type="radio" name="flower" value="lotus"/>
+                Lotus
+                <img class="modal__image" src="images/lotus.png" alt="Lotus" />
             </label>
-            <label>
-                <input type="radio" name="flower"/>
+            <label class="modal__label">
+                <input type="radio" name="flower" value="cornflower"/>
                 Cornflower
+                <img class="modal__image" src="images/cornflower.png" alt="Cornflower" />
             </label>
-            <label>
-                <input type="radio" name="flower"/>
+            <label class="modal__label">
+                <input type="radio" name="flower" value="hydrangea"/>
                 Hydrangea
+                <img class="modal__image" src="images/hydrogea-front.png" alt="Hydrangea" />
             </label>
         </form>
         <div class="modal__btns">
@@ -75,17 +84,20 @@
             <span id="redClose" class="close">&times;</span>
         </div>
         <form class="modal__form">
-            <label>
-                <input type="radio" name="flower"/>
+            <label class="modal__label">
+                <input type="radio" name="flower" value="rose"/>
                 Rose
+                <img class="modal__image" src="images/pink-rose-back.png" alt=" Pink Rose" />
             </label>
-            <label>
-                <input type="radio" name="flower"/>
-                Dahlia
+            <label class="modal__label">
+                <input type="radio" name="flower" value="peony"/>
+                Peony
+                <img class="modal__image" src="images/peach-peony.png" alt="Peony" />
             </label>
-            <label>
-                <input type="radio" name="flower"/>
-                Amaryllis
+            <label class="modal__label">
+                <input type="radio" name="flower" value="gerbera"/>
+                Gerbera
+                <img class="modal__image" src="images/gerbera-front.png" alt="Gerbera" />
             </label>
         </form>
         <div class="modal__btns">
