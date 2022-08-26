@@ -197,17 +197,24 @@ window.onclick = (event) => {
     }
 };
 
-// windon.onResize = () => {
-// inside function what gets dimensions of canvas wrapper div and assigne canvas size to it ion proportiopn.
+window.onresize = () => {
+    const optimal_dimensions = [600,500];
+    const scaleFactorX=window.innerWidth/optimal_dimensions[0];
+    const scaleFactorY=window.innerHeight/optimal_dimensions[1];
+    if(scaleFactorX <  scaleFactorY && scaleFactorX < 1) {
+        canvas.setWidth(optimal_dimensions[0] *scaleFactorX);
+        canvas.setHeight(optimal_dimensions[1] *scaleFactorX);
+        canvas.setZoom(scaleFactorX);
+    } else if(scaleFactorX >  scaleFactorY && scaleFactorY < 1){
+        canvas.setWidth(optimal_dimensions[0] *scaleFactorY);
+        canvas.setHeight(optimal_dimensions[1] *scaleFactorY);
+        canvas.setZoom(scaleFactorY);
+    }else {
+        canvas.setWidth(optimal_dimensions[0] );
+        canvas.setHeight(optimal_dimensions[1] );
+        canvas.setZoom(1);
+    }
 
-// window.onresize = () => {
-//     const outerCanvasContainer = document.getElementById('fabric-canvas-wrapper');
-//
-//     const ratio          = canvas.getWidth() / canvas.getHeight();
-//     const containerWidth = outerCanvasContainer.clientWidth;
-//     const scale          = containerWidth / canvas.getWidth();
-//     const zoom           = canvas.getZoom() * scale;
-//
-//     canvas.setDimensions({width: containerWidth, height: containerWidth / ratio});
-//     canvas.setViewportTransform([zoom, 0, 0, zoom, 0, 0]);
-// }
+    canvas.calcOffset();
+    canvas.renderAll();
+}
